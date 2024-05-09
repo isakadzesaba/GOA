@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Setting font style */
+    }
+    .input-container {
+      margin-bottom: 20px; /* Adding space between input containers */
+    }
+  </style>
+</head>
+<body>
+
+<!-- Input container for simple text input -->
+<div class="input-container">
+  <label for="text-input">Simple Text Input:</label> <!-- Label connected to the input with 'for' attribute -->
+  <input type="text" id="text-input" value="Sample text"> <!-- Text input with an id -->
+</div>
+
+<!-- Input container for numeric input -->
+<div class="input-container">
+  <label for="numeric-input">Numeric Input:</label> <!-- Label connected to the input with 'for' attribute -->
+  <input type="number" id="numeric-input" value="42"> <!-- Numeric input with an id -->
+</div>
+
+<!-- Input container for multiline text input -->
+<div class="input-container">
+  <label for="multiline-input">Multiline Text Input:</label> <!-- Label connected to the input with 'for' attribute -->
+  <textarea id="multiline-input" rows="4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ac libero nec mi dignissim congue.</textarea> <!-- Multiline text input with an id -->
+</div>
+
+<!-- Input container for checkbox -->
+<div class="input-container">
+  <label><input type="checkbox" id="checkbox-input" checked> Checkbox Input:</label> <!-- Label wrapping the checkbox input -->
+</div>
+
+<!-- Input container for dropdown select -->
+<div class="input-container">
+  <label for="select-input">Dropdown Select Input:</label> <!-- Label connected to the select input with 'for' attribute -->
+  <select id="select-input"> <!-- Select input with an id -->
+    <option value="option1">Option 1</option> <!-- Dropdown options -->
+    <option value="option2">Option 2</option>
+    <option value="option3">Option 3</option>
+  </select>
+</div>
+
+<!-- Explanation of how inputs and labels are connected -->
+<div>
+  <p><strong>How inputs and labels are connected:</strong></p>
+  <p>
+    In HTML, inputs and labels can be connected together using the 'for' attribute in the label tag. 
+    The 'for' attribute in the label tag should have the same value as the 'id' attribute of the associated input element.
+    This connection allows users to click on the label text to focus or toggle the associated input element.
+  </p>
+</div>
+
+</body>
+</html>
