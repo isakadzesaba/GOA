@@ -4,7 +4,7 @@ from turtle import *
 
 #step 1:  draw a square
 # shape("turtle")
-speed(10)
+speed(130)
 width(7)
 color("purple")
 forward(200)
