@@ -13,7 +13,7 @@ body {
 header {
     background-color: #3e515c;
     color: #fff;
-    text-align: center;
+    text-align: right;
     padding: 20px 0;
 }
 
@@ -26,6 +26,7 @@ main {
 h1 {
     font-size: 32px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 h2 {
@@ -37,6 +38,7 @@ p {
     font-size: 20px;
     margin-bottom: 25px;
 }
+
 section {
     background-color: rgba(148, 148, 148, 0.707);
     border-radius: 20px;
@@ -45,6 +47,36 @@ section {
     padding: 20px;
     transition: transform 0.4s ease;
 }
+
 section:hover {
     transform: scale(1.02);
+}
+
+/* Button styling */
+button {
+
+    display: flex;
+    justify-content: flex-end;
+    background-color: #4e24e4;
+    color: rgb(177, 80, 80);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin-top: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    transition: transform 0.4s ease;
+}
+
+button:hover {
+    background-color: #3a2caa;
+    transform: scale(1.07);
+}
+
+a {
+    text-decoration: none;
+    color: rgb(175, 50, 50);
 }
