@@ -30,7 +30,7 @@ main {
     padding: 20px;
 }
 
-/* Home Page Style */
+
 .hero {
     text-align: center;
 }
@@ -39,7 +39,6 @@ main {
     font-size: 36px;
 }
 
-/* Destinations Page Style */
 .destinations {
     text-align: center;
 }
@@ -48,7 +47,6 @@ main {
     font-size: 36px;
 }
 
-/* About Page Style */
 .about {
     text-align: center;
 }
