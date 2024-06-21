@@ -1,23 +1,6 @@
-.container {
-    width: 200px;
-    height: 200px;
-    background-color: tomato;
-    border-radius: 10px;
-}
-
 .box {
-    width: 200px;
+    width: 300px;
     height: 200px;
     background-color: aqua;
     border-radius: 10px;
-}
-
-.box2 {
-    
-    text-align: center;
-    width: 100px;
-    height: 100px;
-    background-color: tomato;
-    border-radius: 10px;
-    box-shadow: 0 0 80px rgba(0, 0, 0, 0.7);
 }
