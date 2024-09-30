@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        form {
+            margin: 50px;
+        }
+
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="registrationForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        let dataBase = [];
+
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            let accountExists = false;
+
+            for (let i = 0; i < dataBase.length; i++) {
+                if (dataBase[i].email === email) {
+                    accountExists = true;
+                    break;
+                }
+            }
+            if (accountExists) {
+                alert("Account already exists.");
+            } else {
+                const newUser = {
+                    name: name,
+                    email: email,
+                    password: password
+                };
+
+                dataBase.push(newUser);
+                alert("Account successfully created.");
+            }
+        });
+    </script>
+
+</body>
+</html>

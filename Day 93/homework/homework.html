@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List Application</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #taskList {
+            list-style-type: none;
+            padding: 0;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+        button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Enter your task here">
+    <button id="addTaskButton">Add</button>
+    <button id="clearAllButton">Clear All</button>
+    <ul id="taskList"></ul>
+
+    <script>
+        const taskInput = document.getElementById('taskInput');
+        const addTaskButton = document.getElementById('addTaskButton');
+        const clearAllButton = document.getElementById('clearAllButton');
+        const taskList = document.getElementById('taskList');
+
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        const saveTasks = () => {
+            localStorage.setItem('tasks', JSON.stringify(tasks));
+        };
+
+        const renderTasks = () => {
+            taskList.innerHTML = '';
+            tasks.forEach((task, index) => {
+                const listItem = document.createElement('li');
+                listItem.className = 'task-item';
+
+                const taskCheckbox = document.createElement('input');
+                taskCheckbox.type = 'checkbox';
+                taskCheckbox.checked = task.completed;
+                taskCheckbox.addEventListener('change', () => {
+                    task.completed = !task.completed;
+                    saveTasks();
+                    renderTasks();
+                });
+
+                const taskText = document.createElement('span');
+                taskText.innerText = task.text;
+                if (task.completed) {
+                    taskText.classList.add('completed');
+                }
+
+                const deleteButton = document.createElement('button');
+                deleteButton.innerText = 'Delete';
+                deleteButton.addEventListener('click', () => {
+                    tasks.splice(index, 1);
+                    saveTasks();
+                    renderTasks();
+                });
+
+                listItem.appendChild(taskCheckbox);
+                listItem.appendChild(taskText);
+                listItem.appendChild(deleteButton);
+                taskList.appendChild(listItem);
+            });
+        };
+
+        addTaskButton.addEventListener('click', () => {
+            const taskText = taskInput.value.trim();
+            if (taskText) {
+                tasks.push({ text: taskText, completed: false });
+                taskInput.value = '';
+                saveTasks();
+                renderTasks();
+            }
+        });
+
+        clearAllButton.addEventListener('click', () => {
+            tasks = [];
+            saveTasks();
+            renderTasks();
+        });
+
+        renderTasks();
+    </script>
+
+</body>
+</html>

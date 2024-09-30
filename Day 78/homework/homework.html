@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+</head>
+<body>
+    <p id="counterParagraph">0</p>
+    <button id="incrementButton">Click me to increase</button>
+
+    <script>
+        var counter = 0;
+
+
+        var paragraph = document.getElementById('counterParagraph');
+        var button = document.getElementById('incrementButton');
+
+        button.addEventListener('click', function() {
+            counter++;
+            paragraph.textContent = counter;
+        });
+    </script>
+</body>
+</html>

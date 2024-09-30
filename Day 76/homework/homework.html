@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <style>
+        #uniqueParagraph {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <p id="uniqueParagraph">paragraph</p>
+    <p>second paragraph</p>
+
+    <script>
+        var paragraph = document.getElementById('uniqueParagraph');
+
+        paragraph.innerHTML = "changed text";
+
+        paragraph.style.color = "red";
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Counter</title>
+    <style>
+        form {
+            margin: 50px;
+        }
+
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            height: 150px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .char-counter {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <form id="messageForm">
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Type your message"></textarea>
+        <div class="char-counter">
+            <span id="charCount">0</span>/200 characters
+        </div>
+    </form>
+
+    <script>
+        var maxChars = 200;
+        var messageInput = document.getElementById('message');
+        var charCount = document.getElementById('charCount');
+
+
+        messageInput.addEventListener('input', function() {
+
+            var currentLength = messageInput.value.length;
+
+            charCount.textContent = currentLength;
+            if (currentLength > maxChars) {
+                messageInput.value = messageInput.value.substring(0, maxChars); 
+                charCount.textContent = maxChars;
+            }
+        });
+    </script>
+
+</body>
+</html>

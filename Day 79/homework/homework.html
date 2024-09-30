@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Password Validation</title>
+    <style>
+        form {
+            margin: 50px;
+        }
+
+        input {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            width: 250px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        .valid {
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <form id="passwordForm">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <div id="passwordMessage" class="error"></div>
+    </form>
+
+    <script>
+        var passwordInput = document.getElementById('password');
+        var passwordMessage = document.getElementById('passwordMessage');
+
+        passwordInput.addEventListener('input', function() {
+            var passwordValue = passwordInput.value;
+            if (passwordValue.length < 8) {
+                passwordMessage.textContent = 'Password must be at least 8 characters long.';
+                passwordMessage.className = 'error'; 
+            } else {
+                passwordMessage.textContent = 'Password is valid.';
+                passwordMessage.className = 'valid';
+            }
+        });
+    </script>
+
+</body>
+</html>

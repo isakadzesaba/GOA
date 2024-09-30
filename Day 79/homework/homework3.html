@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Selection and Display</title>
+    <style>
+        form {
+            margin: 50px;
+        }
+
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        #colorDisplay {
+            padding: 20px;
+            font-size: 18px;
+            border: 1px solid #ccc;
+            width: 200px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <label for="colorSelect">Select a color:</label>
+        <select id="colorSelect">
+            <option value="">-- Choose a color --</option>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+        </select>
+    </form>
+
+    <div id="colorDisplay">Selected color will appear here</div>
+
+    <script>
+        var colorSelect = document.getElementById('colorSelect');
+        var colorDisplay = document.getElementById('colorDisplay');
+
+        colorSelect.addEventListener('change', function() {
+            var selectedColor = colorSelect.value;
+
+            if (selectedColor) {
+                colorDisplay.textContent = selectedColor.charAt(0).toUpperCase() + selectedColor.slice(1);
+                colorDisplay.style.backgroundColor = selectedColor;
+            } else {
+                colorDisplay.textContent = "Selected color will appear here";
+                colorDisplay.style.backgroundColor = "#ccc";
+            }
+        });
+    </script>
+
+</body>
+</html>
