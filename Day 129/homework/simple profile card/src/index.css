@@ -1,0 +1,23 @@
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app {
+  text-align: center;
+  padding: 20px;
+}
+
+.profile-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profile-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 5px;
+  width: 200px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}

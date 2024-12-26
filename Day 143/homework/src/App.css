@@ -1,0 +1,56 @@
+/* Base styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.app {
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.search-container input {
+  padding: 10px;
+  width: 60%;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.weather-details {
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+}
+
+.bg-default {
+  background-color: #f0f0f0;
+}
+
+.bg-sunny {
+  background-color: #ffeb3b;
+}
+
+.bg-rainy {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.bg-cloudy {
+  background-color: #9e9e9e;
+}

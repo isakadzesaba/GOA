@@ -1,0 +1,30 @@
+.good-performance {
+  background-color: #a8e6a0; /* Green for good performance */
+}
+
+.poor-performance {
+  background-color: #ff8b8b; /* Red for poor performance */
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background-color: #ff4c4c;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff2d2d;
+}
